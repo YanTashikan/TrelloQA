@@ -10,7 +10,7 @@ public class TrelloQA {
     public static final String LOGIN = "yantashikan@gmail.com";
     public static final String PASSWORD = "ACSd47pifP36QZV";
 
-
+//4
 
     @BeforeMethod
     public void initTestsSuit() throws InterruptedException {
