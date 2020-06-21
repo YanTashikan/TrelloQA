@@ -7,15 +7,12 @@ public class LoginTCs extends TrelloQA {
 
     @Test
     public void positiveLoginByAtlassian() throws InterruptedException {
-        driver.findElement(By.xpath("//a[@class='btn btn-sm btn-link text-white']")).click();
-        Thread.sleep(MID_PAUSE);
-        driver.findElement(By.xpath("//input[@id='user']")).sendKeys(LOGIN);
-        Thread.sleep(SHORT_PAUSE);
-        driver.findElement(By.xpath("//input[@id='login']")).click();
-        Thread.sleep(SHORT_PAUSE);
-        driver.findElement(By.xpath("//input[@id='password']")).sendKeys(PASSWORD);
-        Thread.sleep(MID_PAUSE);
-        driver.findElement(By.xpath("//button[@id='login-submit']")).click();
+        waitAndClickOrFillIfClicable("//a[@class='btn btn-sm btn-link text-white']","", 10);
+        waitAndClickOrFillIfClicable("//input[@id='user']",LOGIN, 10);
+        waitAndClickOrFillIfClicable("//input[@id='login']","", 10);
+        waitAndClickOrFillIfClicable("//input[@id='password']",PASSWORD, 10);
+        waitAndClickOrFillIfVisible("//button[@id='login-submit']","", 10);
+
         Thread.sleep(LONG_PAUSE);
         int keyElement=driver.findElements(By.xpath("//h3[@class='boards-page-board-section-header-name']")).size();
         if(keyElement>0){
